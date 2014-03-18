@@ -19,7 +19,7 @@ var tinyThrottle = function(fn, threshold, scope, tail) {
     var now = +new Date, args = arguments;
     if (tail || (tick && now<tick+threshold)) {
       clearTimeout(deferTimer);
-      deferTimer = setTimeout(function ) {
+      deferTimer = setTimeout(function() {
         tick = now;
         fn.apply(context, args);
       }, threshold);
